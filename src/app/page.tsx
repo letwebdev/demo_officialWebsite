@@ -1,13 +1,13 @@
-"use client";
+"use client"
+import { Button, Paper } from "@mui/material"
+import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
     <main>
       <FirstScreen />
     </main>
-  );
+  )
 }
-import { Button, Paper } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
 
 const items = [
   {
@@ -18,7 +18,7 @@ const items = [
     name: "Random Name #2",
     description: "Hello World!",
   },
-];
+]
 function FirstScreen() {
   return (
     <div className="min-h-[100vh]">
@@ -31,7 +31,7 @@ function FirstScreen() {
         ))}
       </Carousel>
     </div>
-  );
+  )
 }
 
 function Item(props: { item: (typeof items)[0] }) {
@@ -42,5 +42,5 @@ function Item(props: { item: (typeof items)[0] }) {
 
       <Button className="CheckButton">Check it out!</Button>
     </Paper>
-  );
+  )
 }

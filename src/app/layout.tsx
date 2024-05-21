@@ -1,27 +1,27 @@
-"use client";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-import CssBaseline from "@mui/material/CssBaseline";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
-import { Tab, Tabs } from "@mui/material";
-import Link from "next/link";
+"use client"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import "@fontsource/roboto/300.css"
+import "@fontsource/roboto/400.css"
+import "@fontsource/roboto/500.css"
+import "@fontsource/roboto/700.css"
+import CssBaseline from "@mui/material/CssBaseline"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
+import { Tab, Tabs } from "@mui/material"
+import Link from "next/link"
 
-import React from "react";
-const inter = Inter({ subsets: ["latin"] });
+import React from "react"
+const inter = Inter({ subsets: ["latin"] })
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
-  };
+    setValue(newValue)
+  }
   return (
     <>
       <head>
@@ -72,7 +72,7 @@ export default function RootLayout({
         </body>
       </html>
     </>
-  );
+  )
 }
 // function MyTabs() {
 //   // You need to provide the routes in descendant order.
