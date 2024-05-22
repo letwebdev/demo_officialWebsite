@@ -25,14 +25,14 @@ export default function RootLayout({
   return (
     <>
       <head>
-        <title>某公司</title>
+        <title>Company A</title>
       </head>
       <html lang="en">
         <CssBaseline />
         <body className={inter.className}>
           <AppRouterCacheProvider>
             <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl ">
-              <div>某公司</div>
+              <div>Company A</div>
               <nav>
                 {" "}
                 <Tabs

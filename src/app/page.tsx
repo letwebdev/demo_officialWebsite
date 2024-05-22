@@ -1,10 +1,12 @@
 "use client"
-import { Button, Paper } from "@mui/material"
+import { Button, Paper, Tab, Tabs } from "@mui/material"
+import React from "react"
 import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
     <main>
       <FirstScreen />
+      <ProductServices />
     </main>
   )
 }
@@ -42,5 +44,44 @@ function Item(props: { item: (typeof items)[0] }) {
 
       <Button className="CheckButton">Check it out!</Button>
     </Paper>
+  )
+}
+
+function ProductServices() {
+  const [value, setValue] = React.useState(0)
+
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+    setValue(newValue)
+  }
+  return (
+    <>
+      <h2>产品服务</h2>
+      <Tabs
+        value={value}
+        onChange={handleChange}
+      >
+        <Tab label="Item One" />
+        <Tab label="Item Two" />
+        <Tab label="Item Three" />
+      </Tabs>
+      <div
+      // value={value}
+      // index={0}
+      >
+        Item One
+      </div>
+      <div
+      // value={value}
+      // index={1}
+      >
+        Item Two
+      </div>
+      <div
+      // value={value}
+      // index={2}
+      >
+        Item Three
+      </div>
+    </>
   )
 }
