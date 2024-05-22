@@ -1,5 +1,4 @@
 "use client"
-import { Inter } from "next/font/google"
 import "./globals.css"
 import "@fontsource/roboto/300.css"
 import "@fontsource/roboto/400.css"
@@ -7,11 +6,9 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import CssBaseline from "@mui/material/CssBaseline"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
-import { Tab, Tabs } from "@mui/material"
 import Link from "next/link"
 
 import React from "react"
-const inter = Inter({ subsets: ["latin"] })
 
 export default function RootLayout({
   children,
@@ -29,12 +26,11 @@ export default function RootLayout({
       </head>
       <html lang="en">
         <CssBaseline />
-        <body className={inter.className}>
+        <body>
           <AppRouterCacheProvider>
             <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl ">
               <div>Company A</div>
               <nav>
-                {" "}
                 <Tabs
                   value={value}
                   onChange={handleChange}

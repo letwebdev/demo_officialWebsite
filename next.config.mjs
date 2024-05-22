@@ -16,8 +16,6 @@ const nextConfig = {
         imports: [
           // presets
           "react",
-          "vue",
-          "vue-router",
           // custom
           {
             "@mui/material": ["Tab", "Tabs", "Button"],
