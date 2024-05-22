@@ -1,6 +1,5 @@
 "use client"
 import { Button, Paper, Tab, Tabs } from "@mui/material"
-import React from "react"
 import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
@@ -48,7 +47,7 @@ function Item(props: { item: (typeof items)[0] }) {
 }
 
 function ProductServices() {
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
