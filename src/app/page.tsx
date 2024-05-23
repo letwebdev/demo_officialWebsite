@@ -1,5 +1,5 @@
 "use client"
-import { Button, Container, Paper, Tab, Tabs } from "@mui/material"
+import { Tab, Tabs } from "@mui/material"
 import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
@@ -44,7 +44,6 @@ function FirstScreen() {
     </Carousel>
   )
 }
-
 function Service(props: { service: (typeof services)[0] }) {
   return (
     <div className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[200px]">
@@ -56,39 +55,51 @@ function Service(props: { service: (typeof services)[0] }) {
 
 function ProductServices() {
   const [value, setValue] = useState(0)
-
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
   }
   return (
-    <>
-      <h2>产品服务</h2>
+    <article className="max-w-[80%] mx-auto h-[500px]">
+      <h2 className="text-center">Services</h2>
       <Tabs
         value={value}
         onChange={handleChange}
+        variant="fullWidth"
+        centered
+        className="mb-11"
       >
-        <Tab label="Item One" />
-        <Tab label="Item Two" />
-        <Tab label="Item Three" />
+        <Tab
+          label="Service A"
+          value={0}
+          component="h3"
+        />
+        <Tab
+          label="Service B"
+          value={1}
+          component="h3"
+        />
+        <Tab
+          label="Service C"
+          value={2}
+          component="h3"
+        />
       </Tabs>
-      <div
-      // value={value}
-      // index={0}
-      >
-        Item One
-      </div>
-      <div
-      // value={value}
-      // index={1}
-      >
-        Item Two
-      </div>
-      <div
-      // value={value}
-      // index={2}
-      >
-        Item Three
-      </div>
-    </>
+      <Subservice value={value} />
+    </article>
+  )
+}
+function Subservice(_props: { value: number }) {
+  return (
+    <div className="grid grid-cols-[auto,auto] gap-y-10">
+      {["A", "B", "C", "D"].map((serviceType, index) => (
+        <div
+          className="w-[300px] justify-self-center"
+          key={index}
+        >
+          <h3>subservice {serviceType}</h3>
+          <p>description</p>
+        </div>
+      ))}
+    </div>
   )
 }

@@ -7,19 +7,19 @@ import "@fontsource/roboto/700.css"
 import CssBaseline from "@mui/material/CssBaseline"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
 import Link from "next/link"
+import Image from "next/image"
+
+import favicon from "./favicon.ico"
 
 import { Tabs, Tab } from "@mui/material"
 import React from "react"
+import ServiceList from "./ServiceList"
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const [value, setValue] = React.useState(0)
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue)
-  }
   return (
     <>
       <head>
@@ -29,76 +29,102 @@ export default function RootLayout({
         <CssBaseline />
         <body>
           <AppRouterCacheProvider>
-            <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl h-[--height-header]">
-              <div>Company A</div>
-              <nav>
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  className="text-xl"
-                >
-                  <Tab
-                    label="首页"
-                    value="/"
-                    href="/"
-                    component={Link}
-                  />
-                  <Tab
-                    label="产品服务"
-                    value="/services"
-                    href="/services"
-                    component={Link}
-                  />
-                  <Tab
-                    label="精品案例"
-                    value="/examples"
-                    href="/examples"
-                    component={Link}
-                  />
-                  <Tab
-                    label="关于"
-                    value="/about"
-                    href="/about"
-                    component={Link}
-                  />
-                </Tabs>
-              </nav>
-            </header>
+            <Header />
             {children}
+            <Footer />
           </AppRouterCacheProvider>
         </body>
       </html>
     </>
   )
 }
-// function MyTabs() {
-//   // You need to provide the routes in descendant order.
-//   // This means that if you have nested routes like:
-//   // users, users/new, users/edit.
-//   // Then the order should be ['users/add', 'users/edit', 'users'].
-//   const routeMatch = routeMatch(["/inbox/:id", "/drafts", "/trash"]);
-//   const currentTab = routeMatch?.pattern?.path;
 
-//   return (
-//     <Tabs value={currentTab}>
-//       <Tab
-//         label="Inbox"
-//         value="/inbox/:id"
-//         to="/inbox/1"
-//         component={Link}
-//       />
-//       <Tab
-//         label="Drafts"
-//         value="/drafts"
-//         to="/drafts"
-//         component={Link}
-//       />
-//       <Tab
-//         label="Trash"
-//         value="/trash"
-//         to="/trash"
-//         component={Link}
-//       />
-//     </Tabs>
-//   );
-// }
+function Header() {
+  const [value, setValue] = React.useState("/")
+  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+    setValue(newValue)
+  }
+  return (
+    <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl h-[--height-header]">
+      <div>Company A</div>
+      <nav>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          className="text-xl"
+        >
+          <Tab
+            label="Home"
+            value="/"
+            href="/"
+            component={Link}
+          />
+          <Tab
+            label="Services"
+            value="/services"
+            href="/services"
+            component={Link}
+          />
+          <Tab
+            label="Showcase"
+            value="/showcase"
+            href="/showcase"
+            component={Link}
+          />
+          <Tab
+            label="About"
+            value="/about"
+            href="/about"
+            component={Link}
+          />
+        </Tabs>
+      </nav>
+    </header>
+  )
+}
+function Footer() {
+  return (
+    <footer className="flex gap-x-10 px-[20%] pt-[20px] pb-[50px]  text-font-white">
+      <section>
+        <h2 className="text-center min-w-[300px]">Services</h2>
+        <div className="grid grid-cols-2 gap-x-5">
+          <ServiceList
+            service="Service A"
+            subservices={["Subservice A", "Subservice B"]}
+          />
+          <ServiceList
+            service="Service B"
+            subservices={["Subservice A", "Subservice B"]}
+          />
+        </div>
+      </section>
+      <section>
+        <h2 className="text-center mb-2">Contact us</h2>
+        <ul className="flex  flex-col text-sm gap-y-1">
+          <li>
+            <label>Address:</label> abc
+          </li>
+          <li>
+            <label>Phone:</label> 1234-56789
+          </li>
+          <li>
+            <label>Email:</label> service@abc.com
+          </li>
+          <li className="grid grid-cols-[auto,auto]">
+            <label>Working days:&nbsp;</label>
+            <span>Monday through Friday from 8:30 a.m. to 6 p.m.</span>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2 className="text-center mb-5">Official account</h2>
+        <Image
+          src={favicon}
+          width={200}
+          height={200}
+          alt="QR code"
+        />
+      </section>
+    </footer>
+  )
+}
