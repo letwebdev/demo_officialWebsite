@@ -1,11 +1,19 @@
 "use client"
-import { Tab, Tabs } from "@mui/material"
+import { Tab, Tabs, Button } from "@mui/material"
 import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
     <main>
       <FirstScreen />
-      <ProductServices />
+      <div>
+        <Button
+          variant="contained"
+          className="!sticky  top-[30%] left-[100%]"
+        >
+          Contact us
+        </Button>
+        <ProductServices />
+      </div>
     </main>
   )
 }
@@ -33,7 +41,7 @@ function FirstScreen() {
     <Carousel
       animation="slide"
       className="h-[calc(100vh_-_var(--height-header))]"
-      indicatorContainerProps={{ className: "relative top-[-200px] z-[1]" }}
+      indicatorContainerProps={{ className: "relative top-[-30%] z-[1]" }}
     >
       {services.map((item, i) => (
         <Service
@@ -46,7 +54,7 @@ function FirstScreen() {
 }
 function Service(props: { service: (typeof services)[0] }) {
   return (
-    <div className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[200px]">
+    <div className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[20%]">
       <h2>{props.service.heading}</h2>
       <p>{props.service.description}</p>
     </div>

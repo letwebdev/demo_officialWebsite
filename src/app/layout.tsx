@@ -41,7 +41,7 @@ export default function RootLayout({
 
 function Header() {
   const [value, setValue] = React.useState("/")
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
   }
   return (
@@ -82,11 +82,12 @@ function Header() {
     </header>
   )
 }
+
 function Footer() {
   return (
-    <footer className="flex gap-x-10 px-[20%] pt-[20px] pb-[50px]  text-font-white">
+    <footer className="flex justify-center gap-x-10 px-[10%] pt-[20px] pb-[150px]  text-font-white">
       <section>
-        <h2 className="text-center min-w-[300px]">Services</h2>
+        <h2 className="text-center min-w-[300px] mb-0">Services</h2>
         <div className="grid grid-cols-2 gap-x-5">
           <ServiceList
             service="Service A"
