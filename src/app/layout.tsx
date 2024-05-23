@@ -8,6 +8,7 @@ import CssBaseline from "@mui/material/CssBaseline"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
 import Link from "next/link"
 
+import { Tabs, Tab } from "@mui/material"
 import React from "react"
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
         <CssBaseline />
         <body>
           <AppRouterCacheProvider>
-            <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl ">
+            <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl h-[--height-header]">
               <div>Company A</div>
               <nav>
                 <Tabs

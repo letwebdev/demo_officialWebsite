@@ -1,5 +1,5 @@
 "use client"
-import { Button, Paper } from "@mui/material"
+import { Button, Container, Paper, Tab, Tabs } from "@mui/material"
 import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
@@ -10,39 +10,47 @@ export default function Home() {
   )
 }
 
-const items = [
+const services = [
   {
-    name: "Random Name #1",
-    description: "Probably the most random thing you have ever seen!",
+    heading: "Service A",
+    description: "Description A",
   },
   {
-    name: "Random Name #2",
-    description: "Hello World!",
+    heading: "Service B",
+    description: "Description B",
+  },
+  {
+    heading: "Service C",
+    description: "Description C",
+  },
+  {
+    heading: "Service D",
+    description: "Description D",
   },
 ]
 function FirstScreen() {
   return (
-    <div className="min-h-[100vh]">
-      <Carousel animation="slide">
-        {items.map((item, i) => (
-          <Item
-            key={i}
-            item={item}
-          />
-        ))}
-      </Carousel>
-    </div>
+    <Carousel
+      animation="slide"
+      className="h-[calc(100vh_-_var(--height-header))]"
+      indicatorContainerProps={{ className: "relative top-[-200px] z-[1]" }}
+    >
+      {services.map((item, i) => (
+        <Service
+          key={i}
+          service={item}
+        />
+      ))}
+    </Carousel>
   )
 }
 
-function Item(props: { item: (typeof items)[0] }) {
+function Service(props: { service: (typeof services)[0] }) {
   return (
-    <Paper>
-      <h2>{props.item.name}</h2>
-      <p>{props.item.description}</p>
-
-      <Button className="CheckButton">Check it out!</Button>
-    </Paper>
+    <div className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[200px]">
+      <h2>{props.service.heading}</h2>
+      <p>{props.service.description}</p>
+    </div>
   )
 }
 
