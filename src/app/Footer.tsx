@@ -9,9 +9,7 @@ export default function Footer() {
     <footer className="flex justify-center gap-x-10 px-[10%] pt-[20px] pb-[150px]  text-font-white">
       <section>
         <h2 className="text-center min-w-[300px] mb-0">Services</h2>
-        <div className="grid grid-cols-2 gap-x-5">
-          <ServiceLists />
-        </div>
+        <ServiceLists />
       </section>
       <section>
         <h2 className="text-center mb-2">Contact us</h2>
@@ -35,8 +33,8 @@ export default function Footer() {
         <h2 className="text-center mb-5">Official account</h2>
         <Image
           src={favicon}
-          width={200}
-          height={200}
+          width={150}
+          height={150}
           alt="QR code"
         />
       </section>
