@@ -32,7 +32,7 @@ export default function Footer() {
       </section>
       <Container
         component="section"
-        className="!flex items-center  flex-col"
+        className="flex items-center  flex-col w-fit mx-0"
       >
         <h2 className="text-center mb-5">Official account</h2>
         <Image
