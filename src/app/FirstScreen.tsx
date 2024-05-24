@@ -1,5 +1,9 @@
 "use client"
 import { services } from "./data"
+type ServiceReadnotonly = Readnotonly<(typeof services)[0]>
+type ServiceNotConst = {
+  [Key in keyof ServiceReadnotonly]: Key extends string ? string : Key
+}
 
 export function FirstScreen() {
   return (
@@ -8,7 +12,7 @@ export function FirstScreen() {
       className="h-[calc(100vh_-_var(--height-header))]"
       indicatorContainerProps={{ className: "relative top-[-30%] z-[1]" }}
     >
-      {services.map((service) => (
+      {services.map((service: ServiceNotConst) => (
         <Service
           key={service.heading}
           service={service}
@@ -19,7 +23,7 @@ export function FirstScreen() {
   )
 }
 function Service(props: {
-  service: (typeof services)[0]
+  service: ServiceNotConst
   className?: Element["className"]
 }) {
   return (
