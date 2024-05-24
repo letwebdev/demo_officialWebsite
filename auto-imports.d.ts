@@ -37,3 +37,9 @@ declare global {
   const useSyncExternalStore: typeof import('react')['useSyncExternalStore']
   const useTransition: typeof import('react')['useTransition']
 }
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { ReactElement } from 'react'
+  import('react')
+}

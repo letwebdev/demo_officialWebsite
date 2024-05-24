@@ -11,7 +11,7 @@ export const services = [
     heading: "Service C",
     description: "Description C",
   },
-]
+] as const
 export const subservices = [
   {
     heading: "Subservice A",
@@ -25,4 +25,29 @@ export const subservices = [
     heading: "Subservice C",
     description: "Description C",
   },
-]
+] as const
+
+export const navTabs = [
+  {
+    label: "Home",
+    href: "/",
+    withDropdown: false,
+  },
+  {
+    label: "Services",
+    href: "/services",
+    withDropdown: true,
+  },
+  {
+    label: "Showcase",
+    href: "/showcase",
+    withDropdown: false,
+  },
+  {
+    label: "About",
+    href: "/about",
+    withDropdown: true,
+  },
+] as const
+
+export const subabouts = ["Activities", "Culture", "Join us"] as const

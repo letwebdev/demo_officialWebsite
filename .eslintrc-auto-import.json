@@ -33,6 +33,8 @@
     " Container": true,
     "Card": true,
     "Container": true,
-    "Tooltip": true
+    "Tooltip": true,
+    "RouteLocationRaw": true,
+    "ReactElement": true
   }
 }

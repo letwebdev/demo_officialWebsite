@@ -31,6 +31,11 @@ const nextConfig = {
               "ListItemButton",
             ],
           },
+          {
+            from: "react",
+            imports: ["ReactElement"],
+            type: true,
+          },
         ],
 
         // Array of strings of regexes that contains imports meant to be filtered out.

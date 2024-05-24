@@ -8,20 +8,24 @@ export function FirstScreen() {
       className="h-[calc(100vh_-_var(--height-header))]"
       indicatorContainerProps={{ className: "relative top-[-30%] z-[1]" }}
     >
-      {services.map((item, i) => (
+      {services.map((service) => (
         <Service
-          key={i}
-          service={item}
+          key={service.heading}
+          service={service}
+          className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[20%]"
         />
       ))}
     </Carousel>
   )
 }
-function Service(props: { service: (typeof services)[0] }) {
+function Service(props: {
+  service: (typeof services)[0]
+  className?: Element["className"]
+}) {
   return (
-    <div className="h-[calc(100vh_-_var(--height-header))]  flex items-center justify-center flex-col pb-[20%]">
+    <section className={props.className}>
       <h2>{props.service.heading}</h2>
       <p>{props.service.description}</p>
-    </div>
+    </section>
   )
 }

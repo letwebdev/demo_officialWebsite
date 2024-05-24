@@ -2,53 +2,63 @@
 import Link from "next/link"
 import { ServiceLists } from "./ServiceLists"
 import { HeaderDropdown } from "./HeaderDropdown"
+import { navTabs, subabouts } from "./data"
 
 export function Header() {
-  const [value, setValue] = React.useState("/")
+  const [value, setValue] = React.useState<string>(navTabs[0].href)
   const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue)
   }
   return (
     <header className="px-[20%] py-[10px] flex items-center justify-between text-2xl h-[--height-header]">
-      <div>Company A</div>
+      <h1>Company A</h1>
       <nav>
         <Tabs
           value={value}
           onChange={handleChange}
           className="text-xl"
         >
-          <Tab
-            label="Home"
-            value="/"
-            href="/"
-            component={Link}
-          />
-          <HeaderDropdown dropdown={<ServiceLists />}>
-            <Tab
-              label="Services"
-              value="/services"
-              href="/services"
-              component={Link}
-            />
-          </HeaderDropdown>
-          <Tab
-            label="Showcase"
-            value="/showcase"
-            href="/showcase"
-            component={Link}
-          />
-          <HeaderDropdown dropdown={<About />}>
-            <Tab
-              label="About"
-              value="/about"
-              href="/about"
-              component={Link}
-            />
-          </HeaderDropdown>
+          {HeaderTabList()}
         </Tabs>
       </nav>
     </header>
   )
+}
+
+function HeaderTabList() {
+  return navTabs.map((tab) => {
+    if (!tab.withDropdown) {
+      return (
+        <Tab
+          key={tab.label}
+          label={tab.label}
+          value={tab.label}
+          href={tab.href}
+          component={Link}
+        />
+      )
+    } else {
+      const dropdown =
+        tab.label === "Services"
+          ? ServiceLists()
+          : tab.label === "About"
+          ? About()
+          : (tab satisfies never)
+      return (
+        <>
+          <HeaderDropdown dropdown={dropdown}>
+            <Tab
+              key={tab.label}
+              label={tab.label}
+              value={tab.label}
+              href={tab.href}
+              component={Link}
+            />
+          </HeaderDropdown>
+        </>
+      )
+    }
+  })
 }
 
 function About() {
@@ -58,15 +68,15 @@ function About() {
         component="li"
         disablePadding
       >
-        {["Activities", "Culture", "Join us"].map((item, index) => (
+        {subabouts.map((subabout) => (
           <ListItemButton
             component="a"
-            href=""
+            href="TODO"
             sx={{ pl: 1, width: "fit-content" }}
-            key={index}
+            key={subabout}
           >
             <ListItemText
-              primary={item}
+              primary={subabout}
               primaryTypographyProps={{
                 fontSize: "0.8rem",
               }}

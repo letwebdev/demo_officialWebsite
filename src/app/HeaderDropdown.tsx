@@ -1,5 +1,9 @@
 "use client"
-export function HeaderDropdown({ children, dropdown }) {
+
+export function HeaderDropdown(props: {
+  children: ReactElement
+  dropdown: ReactElement
+}) {
   return (
     <div>
       <Tooltip
@@ -11,9 +15,9 @@ export function HeaderDropdown({ children, dropdown }) {
             },
           },
         }}
-        title={<Card className="p-2">{dropdown}</Card>}
+        title={<Card className="p-2">{props.dropdown}</Card>}
       >
-        {children}
+        {props.children}
       </Tooltip>
     </div>
   )
