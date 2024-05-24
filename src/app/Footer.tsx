@@ -3,6 +3,7 @@ import Image from "next/image"
 import favicon from "./favicon.ico"
 import React from "react"
 import { ServiceLists } from "./ServiceLists"
+import { Container } from "@mui/material"
 
 export default function Footer() {
   return (
@@ -29,7 +30,10 @@ export default function Footer() {
           </li>
         </ul>
       </section>
-      <section>
+      <Container
+        component="section"
+        className="!flex items-center  flex-col"
+      >
         <h2 className="text-center mb-5">Official account</h2>
         <Image
           src={favicon}
@@ -37,7 +41,7 @@ export default function Footer() {
           height={150}
           alt="QR code"
         />
-      </section>
+      </Container>
     </footer>
   )
 }
