@@ -28,6 +28,11 @@
     "ListItemButton": true,
     "ListItemText": true,
     "React": true,
-    "default": true
+    "default": true,
+    "              Container": true,
+    " Container": true,
+    "Card": true,
+    "Container": true,
+    "Tooltip": true
   }
 }

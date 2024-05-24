@@ -6,9 +6,8 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import CssBaseline from "@mui/material/CssBaseline"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
-import Footer from "./Footer"
 
-import React from "react"
+import Footer from "./Footer"
 import { Header } from "./Header"
 
 export default function RootLayout({

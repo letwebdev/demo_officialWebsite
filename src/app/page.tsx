@@ -1,6 +1,4 @@
 "use client"
-import { Tab, Tabs, Button } from "@mui/material"
-import Carousel from "react-material-ui-carousel"
 export default function Home() {
   return (
     <main>

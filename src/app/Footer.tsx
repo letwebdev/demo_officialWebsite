@@ -1,9 +1,7 @@
 "use client"
 import Image from "next/image"
 import favicon from "./favicon.ico"
-import React from "react"
 import { ServiceLists } from "./ServiceLists"
-import { Container } from "@mui/material"
 
 export default function Footer() {
   return (

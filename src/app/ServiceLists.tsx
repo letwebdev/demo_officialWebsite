@@ -1,5 +1,4 @@
 "use client"
-import React from "react"
 import ServiceList from "./ServiceList"
 
 export function ServiceLists() {

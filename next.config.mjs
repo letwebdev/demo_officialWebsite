@@ -20,9 +20,12 @@ const nextConfig = {
             "react-material-ui-carousel": ["Carousel"],
 
             "@mui/material": [
+              "Container",
+              "Button",
+              "Card",
               "Tab",
               "Tabs",
-              "Button",
+              "Tooltip",
               "List",
               "ListItemText",
               "ListItemButton",

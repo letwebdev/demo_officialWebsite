@@ -1,7 +1,3 @@
-import List from "@mui/material/List"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemText from "@mui/material/ListItemText"
-
 export default function ServiceList(props: {
   service: string
   subservices: string[]
