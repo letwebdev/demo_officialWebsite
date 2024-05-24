@@ -10,6 +10,7 @@ declare global {
   const List: typeof import('@mui/material')['List']
   const ListItemButton: typeof import('@mui/material')['ListItemButton']
   const ListItemText: typeof import('@mui/material')['ListItemText']
+  const React: typeof import('react')['default']
   const Tab: typeof import('@mui/material')['Tab']
   const Tabs: typeof import('@mui/material')['Tabs']
   const createRef: typeof import('react')['createRef']

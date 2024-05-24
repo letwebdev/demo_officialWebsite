@@ -26,6 +26,8 @@
     "useTransition": true,
     "List": true,
     "ListItemButton": true,
-    "ListItemText": true
+    "ListItemText": true,
+    "React": true,
+    "default": true
   }
 }

@@ -16,6 +16,7 @@ const nextConfig = {
           "react",
           // custom
           {
+            react: [["default", "React"]],
             "react-material-ui-carousel": ["Carousel"],
 
             "@mui/material": [
