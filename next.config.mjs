@@ -7,22 +7,25 @@ const nextConfig = {
   webpack: (config, options) => {
     config.plugins.push(
       AutoImport({
-        // targets to transform
         include: [
           /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-          /\.vue$/,
-          /\.vue\?vue/, // .vue
-          /\.md$/, // .md
         ],
 
-        // global imports to register
         imports: [
           // presets
           "react",
           // custom
           {
-            "@mui/material": ["Tab", "Tabs", "Button"],
             "react-material-ui-carousel": ["Carousel"],
+
+            "@mui/material": [
+              "Tab",
+              "Tabs",
+              "Button",
+              "List",
+              "ListItemText",
+              "ListItemButton",
+            ],
           },
         ],
 

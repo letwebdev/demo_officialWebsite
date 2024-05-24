@@ -14,7 +14,7 @@ export default function Footer() {
       </section>
       <section>
         <h2 className="text-center mb-2">Contact us</h2>
-        <ul className="flex  flex-col text-sm gap-y-1">
+        <ul className="flex  flex-col text-sm gap-y-3">
           <li>
             <label>Address:</label> abc
           </li>

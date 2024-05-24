@@ -7,6 +7,9 @@ export {}
 declare global {
   const Button: typeof import('@mui/material')['Button']
   const Carousel: typeof import('react-material-ui-carousel')['Carousel']
+  const List: typeof import('@mui/material')['List']
+  const ListItemButton: typeof import('@mui/material')['ListItemButton']
+  const ListItemText: typeof import('@mui/material')['ListItemText']
   const Tab: typeof import('@mui/material')['Tab']
   const Tabs: typeof import('@mui/material')['Tabs']
   const createRef: typeof import('react')['createRef']

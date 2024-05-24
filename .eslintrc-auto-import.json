@@ -23,6 +23,9 @@
     "useRef": true,
     "useState": true,
     "useSyncExternalStore": true,
-    "useTransition": true
+    "useTransition": true,
+    "List": true,
+    "ListItemButton": true,
+    "ListItemText": true
   }
 }

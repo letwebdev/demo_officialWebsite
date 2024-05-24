@@ -1,3 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "./.eslintrc-auto-import.json"]
+  "extends": ["next/core-web-vitals", "./.eslintrc-auto-import.json"],
+  "rules": {
+    "react/jsx-no-undef": [2, { "allowGlobals": true }]
+  }
 }
