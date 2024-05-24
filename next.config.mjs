@@ -3,6 +3,7 @@ import AutoImport from "unplugin-auto-import/webpack"
 const nextConfig = {
   basePath: "/demo_officialwebsite",
   output: "export",
+  images: { unoptimized: true },
   webpack: (config, options) => {
     config.plugins.push(
       AutoImport({
