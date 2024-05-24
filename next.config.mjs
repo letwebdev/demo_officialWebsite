@@ -1,6 +1,8 @@
 import AutoImport from "unplugin-auto-import/webpack"
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  basePath: "/demo_officialwebsite",
+  output: "export",
   webpack: (config, options) => {
     config.plugins.push(
       AutoImport({
