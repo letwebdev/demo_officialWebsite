@@ -1,5 +1,5 @@
 "use client"
-import { services } from "./data"
+import { services } from "../data"
 type ServiceReadnotonly = Readnotonly<(typeof services)[0]>
 type ServiceNotConst = {
   [Key in keyof ServiceReadnotonly]: Key extends string ? string : Key

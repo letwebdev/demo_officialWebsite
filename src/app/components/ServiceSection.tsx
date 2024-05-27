@@ -1,5 +1,5 @@
 "use client"
-import { services, subservices } from "./data"
+import { services, subservices } from "../data"
 
 export function ServiceSection() {
   const [value, setValue] = useState(0)
@@ -17,7 +17,7 @@ export function ServiceSection() {
         className="mb-11"
         classes={{ flexContainer: "justify-around px-[10%]" }}
       >
-        {...ServiceTabList()}
+        {ServiceTabList()}
       </Tabs>
       <Subservice tabIndex={value} />
     </article>
@@ -28,7 +28,7 @@ function ServiceTabList() {
   return services.map((service, index) => {
     return (
       <Tab
-        key={index}
+        key={service.heading}
         label={service.heading}
         value={index}
         component="h3"
@@ -38,13 +38,14 @@ function ServiceTabList() {
   })
 }
 
+// TODO
 function Subservice(props: { tabIndex: number }) {
   return (
     <ul className="grid grid-cols-[auto,auto] gap-y-10">
       {subservices.map((subservice) => (
         <li
           className="w-[300px] justify-self-center"
-          key={props.tabIndex}
+          key={subservice.description}
         >
           <h3>{subservice.heading}</h3>
           <p>{subservice.description}</p>

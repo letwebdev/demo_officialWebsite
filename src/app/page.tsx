@@ -1,7 +1,7 @@
 "use client"
 
-import { FirstScreen } from "./FirstScreen"
-import { ServiceSection } from "./ServiceSection"
+import { FirstScreen } from "./components/FirstScreen"
+import { ServiceSection } from "./components/ServiceSection"
 
 export default function Home() {
   return (

@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { ServiceLists } from "./ServiceLists"
 import { HeaderDropdown } from "./HeaderDropdown"
-import { navTabs, subabouts } from "./data"
+import { navTabs, subabouts } from "../data"
 
 export function Header() {
   const [value, setValue] = React.useState<string>(navTabs[0].href)
@@ -71,7 +71,7 @@ function About() {
         {subabouts.map((subabout) => (
           <ListItemButton
             component="a"
-            href="TODO"
+            href=""
             sx={{ pl: 1, width: "fit-content" }}
             key={subabout}
           >
