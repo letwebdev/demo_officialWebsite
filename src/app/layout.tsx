@@ -7,9 +7,6 @@ import "@fontsource/roboto/700.css"
 import CssBaseline from "@mui/material/CssBaseline"
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter"
 
-import Footer from "./demo2/components/Footer"
-import { Header } from "./demo2/components/Header"
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -23,11 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <CssBaseline />
         <body>
-          <AppRouterCacheProvider>
-            <Header />
-            {children}
-            <Footer />
-          </AppRouterCacheProvider>
+          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
         </body>
       </html>
     </>
