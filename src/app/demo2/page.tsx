@@ -5,11 +5,11 @@ import { ServiceSection } from "./components/ServiceSection"
 
 export default function Home() {
   return (
-    <main>
+    <>
       <FirstScreen />
       <ContactButton />
       <ServiceSection />
-    </main>
+    </>
   )
 }
 
