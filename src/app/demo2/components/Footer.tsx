@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import favicon from "../favicon.ico"
+import favicon from "@/app/favicon.ico"
 import { ServiceLists } from "./ServiceLists"
 
 export default function Footer() {

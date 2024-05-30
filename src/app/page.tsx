@@ -1,25 +1,11 @@
 "use client"
 
-import { FirstScreen } from "./components/FirstScreen"
-import { ServiceSection } from "./components/ServiceSection"
+import Home from "@/app/demo2/page"
 
-export default function Home() {
+export default function Index() {
   return (
     <main>
-      <FirstScreen />
-      <ContactButton />
-      <ServiceSection />
+      <Home />
     </main>
-  )
-}
-
-function ContactButton() {
-  return (
-    <Button
-      variant="contained"
-      className="sticky  top-[30%] left-[100%]"
-    >
-      Contact us
-    </Button>
   )
 }
