@@ -1,6 +1,7 @@
 "use client"
+import Footer from "./components/Footer"
 import Header from "./components/Header"
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode
@@ -8,7 +9,8 @@ export default function RootLayout({
   return (
     <>
       <Header />
-      {children}
+      <main>{children}</main>
+      {Footer()}
     </>
   )
 }
