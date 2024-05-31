@@ -95,6 +95,7 @@
     "MenuIcon": true,
     "SearchIcon": true,
     "Directions": true,
-    "Search": true
+    "Search": true,
+    "Image": true
   }
 }

@@ -11,6 +11,7 @@ declare global {
   const Container: typeof import('@mui/material')['Container']
   const Divider: typeof import('@mui/material')['Divider']
   const IconButton: typeof import('@mui/material')['IconButton']
+  const Image: typeof import('next/image')['default']
   const InputBase: typeof import('@mui/material')['InputBase']
   const Link: typeof import('next/link')['default']
   const List: typeof import('@mui/material')['List']

@@ -8,17 +8,26 @@ export function FirstScreen() {
       className="h-[calc(100vh_-_var(--height-header))]"
       indicatorContainerProps={{ className: "hidden" }}
     >
-      {descriptions.map((description) => (
-        <Service
+      {Descriptions({ descriptions })}
+    </Carousel>
+  )
+}
+
+function Descriptions(props: { descriptions: typeof descriptions }) {
+  return (
+    <>
+      {props.descriptions.map((description) => (
+        <Description
           key={description.heading}
           description={description}
           className="h-[calc(100vh_-_var(--height-header))]  flex justify-center flex-col pb-[15%] pl-[10%]"
         />
       ))}
-    </Carousel>
+    </>
   )
 }
-function Service(props: {
+
+function Description(props: {
   description: (typeof descriptions)[0]
   className?: Element["className"]
 }) {
