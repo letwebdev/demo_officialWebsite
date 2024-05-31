@@ -31,22 +31,22 @@ export const navTabs = [
   {
     label: "Home",
     href: "/",
-    withDropdown: false,
-  },
-  {
-    label: "Services",
-    href: "/services",
-    withDropdown: true,
-  },
-  {
-    label: "Showcase",
-    href: "/showcase",
-    withDropdown: false,
   },
   {
     label: "About",
     href: "/about",
-    withDropdown: true,
+  },
+  {
+    label: "Products",
+    href: "/products",
+  },
+  {
+    label: "Cases",
+    href: "/cases",
+  },
+  {
+    label: "Contact us",
+    href: "/contact",
   },
 ] as const
 

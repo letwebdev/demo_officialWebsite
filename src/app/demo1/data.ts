@@ -1,17 +1,13 @@
-export const services = [
+export const descriptions = [
   {
-    heading: "Service A",
-    description: "Description A",
+    heading: "Heading A",
+    paragraphs: ["Description A", "Description B"],
   },
   {
-    heading: "Service B",
-    description: "Description B",
+    heading: "Heading B",
+    paragraphs: ["Description A", "Description B"],
   },
-  {
-    heading: "Service C",
-    description: "Description C",
-  },
-] as const
+]
 export const subservices = [
   {
     heading: "Subservice A",
@@ -31,22 +27,22 @@ export const navTabs = [
   {
     label: "Home",
     href: "/",
+    withDropdown: false,
+  },
+  {
+    label: "Services",
+    href: "/services",
+    withDropdown: true,
+  },
+  {
+    label: "Showcase",
+    href: "/showcase",
+    withDropdown: false,
   },
   {
     label: "About",
     href: "/about",
-  },
-  {
-    label: "Products",
-    href: "/products",
-  },
-  {
-    label: "Cases",
-    href: "/cases",
-  },
-  {
-    label: "Contact us",
-    href: "/contact",
+    withDropdown: true,
   },
 ] as const
 

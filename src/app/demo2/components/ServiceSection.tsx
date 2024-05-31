@@ -1,5 +1,5 @@
 "use client"
-import { services, subservices } from "../data"
+import { descriptions, subservices } from "../../demo1/data"
 
 export function ServiceSection() {
   const [value, setValue] = useState(0)
@@ -25,7 +25,7 @@ export function ServiceSection() {
 }
 
 function ServiceTabList() {
-  return services.map((service, index) => {
+  return descriptions.map((service, index) => {
     return (
       <Tab
         key={service.heading}

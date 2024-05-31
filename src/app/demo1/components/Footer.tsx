@@ -41,7 +41,7 @@ function ContactUs() {
         {data.listItems.map((item) => {
           return (
             <li key={item.label}>
-              <label>{item.label}</label> {item.text}
+              <label>{item.label}: </label> {item.text}
             </li>
           )
         })}

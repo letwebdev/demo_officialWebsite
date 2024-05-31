@@ -1,5 +1,7 @@
 "use client"
 
+import { FirstScreen } from "./components/FirstScreen"
+
 export default function Home() {
-  return <></>
+  return <>{FirstScreen()}</>
 }
