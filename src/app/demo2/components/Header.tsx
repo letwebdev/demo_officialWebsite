@@ -32,7 +32,7 @@ function HeaderTabList() {
         <Tab
           key={tab.label}
           label={tab.label}
-          value={tab.label}
+          value={tab.href}
           href={tab.href}
           component={Link}
         />

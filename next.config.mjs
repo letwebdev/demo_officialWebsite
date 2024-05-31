@@ -18,17 +18,22 @@ const nextConfig = {
           {
             react: [["default", "React"]],
             "react-material-ui-carousel": [["default", "Carousel"]],
+            "next/link": [["default", "Link"]],
 
             "@mui/material": [
               "Container",
               "Button",
+              "Paper",
+              "IconButton",
               "Card",
               "Tab",
               "Tabs",
               "Tooltip",
               "List",
+              "InputBase",
               "ListItemText",
               "ListItemButton",
+              "Divider",
             ],
           },
           {
