@@ -1,29 +1,31 @@
 import { NextResponse } from "next/server"
-import favicon from "@/app/favicon.ico"
 
 export async function GET() {
   const itemData = [
     {
-      img: favicon,
+      img: "/favicon",
       title: "Product A",
       description: "Description A",
     },
     {
-      img: favicon,
+      img: "/favicon",
       title: "Product B",
       description: "Description B",
     },
     {
-      img: favicon,
+      img: "/favicon",
       title: "Product C",
       description: "Description C",
     },
     {
-      img: favicon,
+      img: "/favicon",
       title: "Product D",
       description: "Description D",
     },
   ]
-  const response = new NextResponse(itemData)
+  const headers = new Headers()
+
+  headers.append("Content-Type", "application/json")
+  const response = new NextResponse(JSON.stringify(itemData), { headers })
   return response
 }

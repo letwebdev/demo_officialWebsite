@@ -17,8 +17,8 @@ export default function ProductList() {
         <Image
           width={208}
           height={208}
-          src={item.img}
-          alt={item.title}
+          src={""}
+          alt={""}
           loading="lazy"
           className="p-[50px]"
         />
