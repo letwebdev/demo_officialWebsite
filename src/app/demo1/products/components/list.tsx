@@ -1,75 +1,86 @@
 import * as React from "react"
-import Card from "@mui/material/Card"
-import Box from "@mui/material/Box"
-import Chip from "@mui/material/Chip"
-import Stack from "@mui/material/Stack"
-import Divider from "@mui/material/Divider"
-import Typography from "@mui/material/Typography"
 import Image from "next/image"
 
-export default function ProductList() {
+export default async function ProductList() {
+  const productList = [
+    {
+      img: "/demo_officialwebsite/favicon.ico",
+      title: "Product A",
+      description: "Description A",
+    },
+    {
+      img: "/demo_officialwebsite/favicon.ico",
+      title: "Product B",
+      description: "Description B",
+    },
+    {
+      img: "/demo_officialwebsite/favicon.ico",
+      title: "Product C",
+      description: "Description C",
+    },
+    {
+      img: "/demo_officialwebsite/favicon.ico",
+      title: "Product D",
+      description: "Description D",
+    },
+  ]
+
   return (
-    <Card
-      variant="outlined"
-      sx={{ maxWidth: 360 }}
+    <Box
+      sx={{ flexGrow: 1 }}
+      className="max-w-[90%] mx-auto"
     >
-      <Box sx={{ p: 2 }}>
-        <Image
-          width={208}
-          height={208}
-          src={""}
-          alt={""}
-          loading="lazy"
-          className="p-[50px]"
-        />
-        <Stack
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
+      <Grid
+        container
+        spacing={2}
+      >
+        {productList.map((product) => (
+          <Grid
+            item
+            xs={3}
+            key={product.title}
           >
-            Toothbrush
-          </Typography>
-          <Typography
-            gutterBottom
-            variant="h6"
-            component="div"
-          >
-            $4.50
-          </Typography>
-        </Stack>
-      </Box>
-      <Divider />
-      <Box sx={{ p: 2 }}>
-        <Typography
-          gutterBottom
-          variant="body2"
-        >
-          Select type
-        </Typography>
-        <Stack
-          direction="row"
-          spacing={1}
-        >
-          <Chip
-            color="primary"
-            label="Soft"
-            size="small"
-          />
-          <Chip
-            label="Medium"
-            size="small"
-          />
-          <Chip
-            label="Hard"
-            size="small"
-          />
-        </Stack>
-      </Box>
-    </Card>
+            <Card variant="outlined">
+              <Box sx={{ p: 2 }}>
+                <Image
+                  width={208}
+                  height={208}
+                  src={product.img}
+                  alt={product.title}
+                  loading="lazy"
+                  className="p-[50px]"
+                />
+                <Stack
+                  direction="column"
+                  justifyContent="space-between"
+                  alignItems="center"
+                >
+                  <Typography
+                    gutterBottom
+                    variant="h5"
+                    component="div"
+                  >
+                    {product.title}
+                  </Typography>
+                  <Typography
+                    gutterBottom
+                    variant="h6"
+                    component="div"
+                  >
+                    {product.description}
+                  </Typography>
+                </Stack>
+              </Box>
+              <Container
+                sx={{ p: 2 }}
+                className="text-center"
+              >
+                <Button variant="contained">Reserve</Button>
+              </Container>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   )
 }

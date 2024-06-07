@@ -34,6 +34,10 @@ const nextConfig = {
               "ListItemText",
               "ListItemButton",
               "Divider",
+              "Box",
+              "Stack",
+              "Typography",
+              "Grid",
             ],
           },
           {
