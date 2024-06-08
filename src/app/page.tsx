@@ -3,11 +3,11 @@
 const navTabs = [
   {
     label: "demo1",
-    href: "./demo1",
+    href: "/demo1",
   },
   {
     label: "demo2",
-    href: "./demo2",
+    href: "/demo2",
   },
 ] as const
 
@@ -29,7 +29,7 @@ export default function Index() {
               key={tab.label}
               label={tab.label}
               value={tab.href}
-              href={`demo_officialwebsite/${tab.href}`}
+              href={tab.href}
               component={Link}
             />
           ))}
