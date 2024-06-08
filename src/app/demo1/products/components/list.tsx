@@ -1,30 +1,11 @@
 import * as React from "react"
 import Image from "next/image"
+import { PrismaClient } from "@prisma/client"
+
+const prisma = new PrismaClient()
 
 export default async function ProductList() {
-  const productList = [
-    {
-      img: "/demo_officialwebsite/favicon.ico",
-      title: "Product A",
-      description: "Description A",
-    },
-    {
-      img: "/demo_officialwebsite/favicon.ico",
-      title: "Product B",
-      description: "Description B",
-    },
-    {
-      img: "/demo_officialwebsite/favicon.ico",
-      title: "Product C",
-      description: "Description C",
-    },
-    {
-      img: "/demo_officialwebsite/favicon.ico",
-      title: "Product D",
-      description: "Description D",
-    },
-  ]
-
+  const productList = await prisma.productList.findMany()
   return (
     <Box
       sx={{ flexGrow: 1 }}
@@ -45,10 +26,10 @@ export default async function ProductList() {
                 <Image
                   width={208}
                   height={208}
-                  src={product.img}
+                  src={product.image}
                   alt={product.title}
                   loading="lazy"
-                  className="p-[50px]"
+                  className="p-[50px] mx-auto"
                 />
                 <Stack
                   direction="column"
