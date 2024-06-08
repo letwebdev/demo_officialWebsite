@@ -12,7 +12,10 @@ import { newsList } from "../data"
 
 export default function News() {
   return (
-    <Paper className="flex flex-col items-center justify-center mx-auto">
+    <Paper
+      className="flex flex-col items-center justify-center p-8 mx-auto"
+      elevation={3}
+    >
       <Typography variant="h3">News</Typography>
       <Timeline
         sx={{

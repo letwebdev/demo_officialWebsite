@@ -29,7 +29,7 @@ function CaseList() {
   return (
     <ImageList
       cols={3}
-      gap={80}
+      gap={100}
     >
       {items.map((item) => (
         <ImageListItem
