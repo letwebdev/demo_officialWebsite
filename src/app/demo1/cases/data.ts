@@ -24,3 +24,25 @@ export const items = [
     title: "Title F",
   },
 ]
+export const newsList = [
+  {
+    title: "Title A",
+    text: "text AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    date: "2024 02-30",
+  },
+  {
+    title: "Title B",
+    text: "text BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+    date: "2024 02-31",
+  },
+  {
+    title: "Title C",
+    text: "text CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+    date: "2024 02-32",
+  },
+  {
+    title: "Title D",
+    text: "text DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
+    date: "2024 02-33",
+  },
+]

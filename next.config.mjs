@@ -39,6 +39,15 @@ const nextConfig = {
               "Typography",
               "Grid",
             ],
+            "@mui/lab": [
+              "Timeline",
+              "TimelineItem",
+              "TimelineSeparator",
+              "TimelineConnector",
+              "TimelineContent",
+              "TimelineDot",
+              "TimelineOppositeContent",
+            ],
           },
           {
             from: "react",

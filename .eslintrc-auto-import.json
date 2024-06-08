@@ -96,6 +96,12 @@
     "SearchIcon": true,
     "Directions": true,
     "Search": true,
-    "Image": true
+    "Image": true,
+    "TimelineConnector": true,
+    "TimelineContent": true,
+    "TimelineDot": true,
+    "TimelineItem": true,
+    "TimelineOppositeContent": true,
+    "TimelineSeparator": true
   }
 }
