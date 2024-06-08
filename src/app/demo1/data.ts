@@ -7,6 +7,10 @@ export const descriptions = [
     heading: "Heading B",
     paragraphs: ["Description A", "Description B"],
   },
+  {
+    heading: "Heading C",
+    paragraphs: ["Description A", "Description B"],
+  },
 ]
 export const subservices = [
   {

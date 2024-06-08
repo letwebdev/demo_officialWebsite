@@ -1,5 +1,6 @@
 "use client"
 import { descriptions } from "../data"
+import Carousel from "react-material-ui-carousel"
 
 export function FirstScreen() {
   return (
@@ -8,22 +9,14 @@ export function FirstScreen() {
       className="h-[calc(100vh_-_var(--height-header))]"
       indicatorContainerProps={{ className: "hidden" }}
     >
-      {Descriptions({ descriptions })}
-    </Carousel>
-  )
-}
-
-function Descriptions(props: { descriptions: typeof descriptions }) {
-  return (
-    <>
-      {props.descriptions.map((description) => (
+      {descriptions.map((description) => (
         <Description
           key={description.heading}
           description={description}
           className="h-[calc(100vh_-_var(--height-header))]  flex justify-center flex-col pb-[15%] pl-[10%]"
         />
       ))}
-    </>
+    </Carousel>
   )
 }
 
@@ -33,11 +26,11 @@ function Description(props: {
 }) {
   return (
     <section className={props.className}>
-      <h2>{props.description.heading}</h2>
+      <Typography variant="h2">{props.description.heading}</Typography>
       <ul>
-        {props.description.paragraphs.map((paragraph) => {
-          return <li key={props.description.heading}>{paragraph}</li>
-        })}
+        {props.description.paragraphs.map((paragraph) => (
+          <li key={paragraph}>{paragraph}</li>
+        ))}
       </ul>
     </section>
   )
