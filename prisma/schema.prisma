@@ -23,6 +23,13 @@ model User {
   email Json?  @unique
 }
 
+model newsList {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  date  String
+  text  String
+  title String
+}
+
 model productList {
   id          String @id @default(auto()) @map("_id") @db.ObjectId
   description String

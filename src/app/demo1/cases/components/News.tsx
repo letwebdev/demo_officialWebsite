@@ -5,12 +5,12 @@ import TimelineSeparator from "@mui/lab/TimelineSeparator"
 import TimelineConnector from "@mui/lab/TimelineConnector"
 import TimelineContent from "@mui/lab/TimelineContent"
 import TimelineDot from "@mui/lab/TimelineDot"
-import TimelineOppositeContent, {
-  timelineOppositeContentClasses,
-} from "@mui/lab/TimelineOppositeContent"
-import { newsList } from "../data"
+import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent"
+import { PrismaClient } from "@prisma/client"
+const prisma = new PrismaClient()
 
-export default function News() {
+export default async function News() {
+  const newsList = await prisma.newsList.findMany()
   return (
     <Paper
       className="flex flex-col items-center justify-center p-8 mx-auto"
