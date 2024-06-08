@@ -2,7 +2,7 @@
 import Link from "next/link"
 import { ServiceLists } from "./ServiceLists"
 import { HeaderDropdown } from "./HeaderDropdown"
-import { navTabs, subabouts } from "../../demo1/data"
+import { navTabs, subabouts } from "../../demo2/data"
 
 export function Header() {
   const [value, setValue] = React.useState<string>(navTabs[0].href)
